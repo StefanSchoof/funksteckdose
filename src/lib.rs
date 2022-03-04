@@ -17,7 +17,6 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 /// SOFTWARE.
-
 use error::Error;
 use log::debug;
 use std::marker::PhantomData;
@@ -35,6 +34,8 @@ pub mod error {
         InvalidDevice(String),
         #[fail(display = "invalid state: {}. Try on, off, 1, 0, true, false", _0)]
         InvalidState(String),
+        #[fail(display = "Unable to set state. Underlying Error {}", _0)]
+        SetError(String),
     }
 }
 
@@ -367,7 +368,6 @@ impl Protocol for Protocol5 {
         }
     }
 }
-
 
 /// Protocol HT6P20B
 pub struct ProtocolHT6P20B;
