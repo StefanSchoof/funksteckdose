@@ -24,17 +24,17 @@ use std::str;
 
 /// Error
 pub mod error {
-    use failure::Fail;
+    use thiserror::Error;
 
-    #[derive(Debug, Fail)]
+    #[derive(Error, Debug)]
     pub enum Error {
-        #[fail(display = "invalid group identifier: {}", _0)]
+        #[error("invalid group identifier: {0}")]
         InvalidGroup(String),
-        #[fail(display = "invalid device identifier: {}", _0)]
+        #[error("invalid device identifier: {0}")]
         InvalidDevice(String),
-        #[fail(display = "invalid state: {}. Try on, off, 1, 0, true, false", _0)]
+        #[error("invalid state: {0}. Try on, off, 1, 0, true, false")]
         InvalidState(String),
-        #[fail(display = "Unable to set state. Underlying Error {}", _0)]
+        #[error("Unable to set state. Underlying Error {0}")]
         SetError(String),
     }
 }
