@@ -27,7 +27,7 @@ doc = false
 [dependencies]
 thiserror = "1.0"
 log = "0.4.14"
-structopt = "0.2.16"
+structopt = "0.3.26"
 wiringpi = { version = "0.2.4", optional = true }
 
 [features]
