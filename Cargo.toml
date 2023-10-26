@@ -21,7 +21,7 @@ path = "src/lib.rs"
 
 [dependencies]
 thiserror = "1.0"
-log = "0.4.17"
+log = "0.4.20"
 wiringpi = { version = "0.2.4", optional = true }
 
 [features]
